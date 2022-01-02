@@ -10,6 +10,7 @@ class Area():
     box : pygame.Surface
     list_box : pygame.Rect
     list_door : pygame.Rect
+    list_jump : pygame.Rect
     door : tuple
 
 
@@ -29,7 +30,9 @@ class Area():
 
 
     def create_box(self,x,y):
+        self.list_jump.append(pygame.Rect(x,y-63,98,63))
         self.list_box.append(pygame.Rect(x,y,98,63))
+        
 
     def draw_box(self):
         for box in self.list_box:
@@ -50,10 +53,10 @@ class Area():
         if self.id == 1 :
             self.draw_area()
             self.create_box(500,273)
-            self.create_box(500,200)
-            self.create_box(700,573)
-            self.create_box(100,150)
-            self.create_door(200,330)
+            self.create_box(400,273)
+            self.create_box(400,200)
+          
+            self.create_door(415,145)
             self.draw_box()
             self.draw_door(0)
 
